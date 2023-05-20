@@ -31,3 +31,11 @@ for(let i=0;i<listItem.length;i++)
 {
     listItem[i].style.fontWeight='bold';
 }
+
+//TagName
+//listItem[4].textContent='Hello';
+
+let list= document.getElementsByTagName("li");
+list[1].textContent='good';
+list[0].style.backgroundColor="red";
+list[4].textContent='Super';
