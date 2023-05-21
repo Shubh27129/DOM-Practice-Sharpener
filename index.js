@@ -73,9 +73,96 @@
 // let items= document.querySelectorAll('li:nth-child(2)');
 // items.style.color="green";
 
- let even=document.querySelectorAll('li:nth-child(even)');
+//  let even=document.querySelectorAll('li:nth-child(even)');
 
-for(let i=0;i<even.length;i++)
-{
-    even[i].style.backgroundColor="green";
-}
+// for(let i=0;i<even.length;i++)
+// {
+//     even[i].style.backgroundColor="green";
+// }
+
+
+/********************************************************************************************* */
+//Traversing the DOM  //
+
+// let itemList=document.querySelector('#items');
+//parentNode
+// console.log(itemList.parentNode);   //div
+// itemList.parentNode.style.backgroundColor='#f4f4f4';
+// console.log(itemList.parentNode.parentNode);  //container
+
+
+//parentElement
+// console.log(itemList.parentElement);   //div
+// itemList.parentElement.style.backgroundColor='#f4f4f4';
+// console.log(itemList.parentElement.parentElement);  //container
+
+//childNodes
+// console.log(itemList.childNodes);
+
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor="yellow";
+
+// // FirstChild
+// console.log(itemList.firstChild);
+// //firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent='Hello 1';
+
+
+// LastChild
+// console.log(itemList.lastChild);
+// //firstElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent='Hello 1';
+
+
+// //nextSibling
+// console.log(itemList.nextSibling);
+// //nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+//previousSibling
+// console.log(itemList.previousSibling);
+// //previousElementSibling
+// console.log(itemList.previousElementSibling);
+
+//createElement
+
+//create a div
+let newDiv= document.createElement('div');
+
+//Add class
+newDiv.className='hello';
+
+//Add id
+newDiv.id='hello1';
+
+//Add attribute
+newDiv.setAttribute('title','Hello Div');
+
+//Create text node
+let newDivText= document.createTextNode('Hello World');
+
+//Add text to div
+newDiv.appendChild(newDivText);
+
+
+var container= document.querySelector('header .container');
+let h1= document.querySelector('header h1');
+
+console.log(newDiv);
+
+container.insertBefore(newDiv,h1);
+newDiv.style.fontSize='30px';
+
+
+// Now go head and add HEllo word before Item 1 //
+let newList= document.createElement('li');
+
+newList.className='list-group-item';
+let newListText= document.createTextNode('Hello World');
+newList.appendChild(newListText);
+
+let ul=document.querySelector('#items');
+ul.insertBefore(newList,ul.children[0]);
